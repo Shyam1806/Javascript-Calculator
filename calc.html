@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Calcy Design</title>
+        <style>
+            .calcyparent {
+                width:100%;
+                overflow:hidden;
+            }
+            .mid{
+                width:28%;
+                margin: 0 auto;
+                background-image: linear-gradient(#fe487b, #8b47ea);
+                /* background-color: #1acae629; */
+                padding: 25px 20px;
+                overflow: hidden;
+                border: 1px solid #909090;
+            }
+            .input1{
+                width:60%;
+                margin: 10px 2px;
+                text-align: center;
+            }
+            .btns{
+                width:30.3%;
+                background-color:#827979;
+                border:1px solid #fff;
+                margin:4px 0px;
+                color:#fff;
+                font-size:18px;
+            }
+            .numbtn{
+                float:left;
+                width:50%;
+            }
+            .sidezbtns{
+                background-color: grey;
+                color:#fff;
+                border:1px solid gray;
+                width: 10.3%;
+                padding: 57px 17px;
+            }
+            .opbtns{
+                background-color: #827979;
+                border: 1px solid #827979;
+                margin:4px 0px;
+                color:#fff;
+                width:14.3%;
+                padding:4px;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="calcyparent">
+            <div class="mid">
+                <div class="calcyz">
+            <input type="text" id="ip1" class="input1"><br>
+            <div class="operandbtns">
+                <button type="button" id="ft2" onclick="btns('+')" class="opbtns" value="+">+</button>
+                <button type="button" id ="ft4" onclick ="btns('-')" class="opbtns" value="-">-</button>
+                <button type="button" id ="ft4" onclick ="btns('*')" class="opbtns" value="*">*</button>
+                <button type="button" id ="ft4" onclick ="btns('/')" class="opbtns" value="/">/</button>
+                
+            </div>
+            <div class="numbtn">
+            <button type="button"  id ="btns" class="btns" value="9" onclick="btns(9)">9</button>
+            <button type="button" id="ft3g" class="btns" value="8" onclick="btns(8)">8</button>
+            <button type="button" id="ft3f" class="btns" value="7" onclick="btns(7)">7</button>
+            <button type="button" id="ft3e" class="btns" value="6" onclick="btns(6)">6</button>
+            <button type="button" id="ft3d" class="btns" value="5" onclick="btns(5)">5</button>
+            <button type="button" id="ft3c" class="btns" value="4" onclick="btns(4)">4</button>
+            <button type="button" id="ft3b" class="btns" value="3" onclick="btns(3)">3</button>
+            <button type="button" id="ft3a" class="btns" value="2" onclick="btns(2)">2</button>
+            <button type="button" id="ft3z" class="btns" value="1" onclick="btns(1)">1</button>
+            <button type="button" id="ft3" class="btns" value="0" onclick="btns(0)">0</button>
+            <button type="button" id="ft3" class="btns" value="." onclick="btns('.')">.</button>
+            <button type="button" id="ac" class="btns" value="c" onclick="Ac()">Ac</button>
+        </div>
+        <div class="sidebtn">
+            <button type="button" id ="ft4" onclick ="equal()" class="sidezbtns" value="=">=</button>
+        </div>
+        
+        </div>
+    </div>
+        </section>
+         <script>
+           function btns(val){
+               console.log(val);
+               document.getElementById("ip1").value =document.getElementById("ip1").value + val;
+           }  
+           function equal(){
+               let a = document.getElementById("ip1").value;
+               console.log(a);
+               let b = eval(a);
+               document.getElementById("ip1").value = b;
+           }  
+           function Ac(){
+               document.getElementById("ip1").value = "";
+           }     
+            
+   
+         </script> 
+    </body>
+</html>
